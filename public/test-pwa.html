@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PWA Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        button { margin: 5px; padding: 10px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>PWA Features Test</h1>
+    
+    <div class="test-section">
+        <h3>Service Worker</h3>
+        <button onclick="testServiceWorker()">Test Service Worker</button>
+        <div id="sw-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Install Prompt</h3>
+        <button onclick="testInstallPrompt()">Test Install Prompt</button>
+        <div id="install-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Offline Capability</h3>
+        <button onclick="testOffline()">Test Offline</button>
+        <div id="offline-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Cache API</h3>
+        <button onclick="testCache()">Test Cache</button>
+        <div id="cache-status"></div>
+    </div>
+
+    <script>
+        async function testServiceWorker() {
+            const status = document.getElementById('sw-status');
+            if ('serviceWorker' in navigator) {
+                const registration = await navigator.serviceWorker.getRegistration();
+                if (registration) {
+                    status.innerHTML = `<span class="success">✅ Service Worker Registered</span>`;
+                } else {
+                    status.innerHTML = `<span class="error">❌ No Service Worker Found</span>`;
+                }
+            } else {
+                status.innerHTML = `<span class="error">❌ Service Worker Not Supported</span>`;
+            }
+        }
+
+        function testInstallPrompt() {
+            const status = document.getElementById('install-status');
+            if (window.deferredPrompt) {
+                status.innerHTML = `<span class="success">✅ Install Prompt Available</span>`;
+            } else {
+                status.innerHTML = `<span class="error">❌ Install Prompt Not Available</span>`;
+            }
+        }
+
+        function testOffline() {
+            const status = document.getElementById('offline-status');
+            if (navigator.onLine) {
+                status.innerHTML = `<span class="success">✅ Online</span>`;
+            } else {
+                status.innerHTML = `<span class="error">❌ Offline</span>`;
+            }
+        }
+
+        async function testCache() {
+            const status = document.getElementById('cache-status');
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                status.innerHTML = `<span class="success">✅ Cache API Available (${cacheNames.length} caches)</span>`;
+            } else {
+                status.innerHTML = `<span class="error">❌ Cache API Not Supported</span>`;
+            }
+        }
+
+        // Run initial tests
+        testServiceWorker();
+        testInstallPrompt();
+        testOffline();
+        testCache();
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- public/test-notification.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Push Notification</title>
+</head>
+<body>
+    <h1>Test Push Notification</h1>
+    <button id="test-local">Test Local Notification</button>
+    <button id="test-permission">Check Permission</button>
+    <button id="test-subscribe">Subscribe</button>
+    <button id="test-unsubscribe">Unsubscribe</button>
+    
+    <script>
+        // Simple test script
+        document.getElementById('test-local').addEventListener('click', () => {
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification('Test Notification', {
+                    body: 'This is a test local notification',
+                    icon: '/icons/icon-192x192.png'
+                });
+            }
+        });
+
+        document.getElementById('test-permission').addEventListener('click', async () => {
+            const permission = await Notification.requestPermission();
+            alert(`Notification permission: ${permission}`);
+        });
+    </script>
+</body>
+</html>

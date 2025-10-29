@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce App - Jualan Online</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Modern E-Commerce Application for online shopping">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="E-Commerce">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="application-name" content="E-Commerce App">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="public/favicon.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-192x192.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+    
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2563eb">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+
+    <!-- Install Prompt -->
+    <div id="install-prompt" class="install-prompt" aria-live="polite" hidden>
+        <div class="install-prompt-content">
+            <div class="install-info">
+                <span class="install-icon">📱</span>
+                <div class="install-text">
+                    <h3>Install E-Commerce App</h3>
+                    <p>Get the best shopping experience with our app</p>
+                </div>
+            </div>
+            <div class="install-actions">
+                <button id="install-cancel" class="btn-install btn-cancel">Not Now</button>
+                <button id="install-confirm" class="btn-install btn-confirm">Install</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div id="offline-indicator" class="offline-indicator" aria-live="assertive" hidden>
+        <span class="offline-icon">📶</span>
+        <span>You are currently offline</span>
+    </div>
+
+    <!-- Header Section -->
+    <header id="app-header" role="banner">
+        <!-- Header will be rendered here by JavaScript -->
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="main-content" role="main">
+        <div id="view-container">
+            <!-- Views will be rendered here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="app-footer" role="contentinfo">
+        <!-- Footer will be rendered here by JavaScript -->
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- Main JS -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
