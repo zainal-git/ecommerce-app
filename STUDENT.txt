@@ -1,0 +1,45 @@
+NAMA: Zainal Arif
+EMAIL: zarif6024@gmail.com
+URL DEPLOYMENT: https://zainal-git.github.io/ecommerce-app
+PLATFORM: GitHub Pages
+REPOSITORY: https://github.com/zainal-git/ecommerce-app
+
+DESKRIPSI APLIKASI:
+E-Commerce Single Page Application (SPA) yang merupakan Progressive Web App (PWA)
+dengan fitur offline support menggunakan IndexedDB, push notifications, dan responsive design.
+
+FITUR YANG DIIMPLEMENTASIKAN:
+✅ PWA dengan Web App Manifest dan Service Worker
+✅ Install prompt untuk homescreen installation
+✅ Offline mode dengan caching strategy
+✅ IndexedDB untuk operasi CRUD data lokal
+✅ Sinkronisasi data offline-online
+✅ Push notifications
+✅ Responsive design untuk semua device
+✅ SPA dengan client-side routing
+✅ Form validation dan error handling
+✅ Accessibility features (ARIA labels, keyboard navigation)
+
+TEKNOLOGI YANG DIGUNAKAN:
+- Vanilla JavaScript (ES6 Modules)
+- Vite sebagai build tool
+- IndexedDB untuk penyimpanan offline
+- Service Worker untuk caching
+- Leaflet.js untuk maps
+- GitHub Pages untuk deployment
+
+STRUKTUR APLIKASI:
+- /src/components/ - Komponen header dan footer
+- /src/views/ - Halaman-halaman aplikasi
+- /src/utils/ - Service utilities (PWA, Auth, Sync, IndexedDB)
+- /src/config/ - Konfigurasi API
+- /public/ - Assets dan service worker
+
+FITUR KRUSIAL:
+1. PWA Support - Aplikasi dapat diinstall dan berjalan offline
+2. Offline Data - Data tersimpan di IndexedDB dan tersinkronisasi saat online
+3. Push Notifications - Notifikasi real-time untuk update aplikasi
+4. Responsive Design - Optimal di desktop, tablet, dan mobile
+
+TANGGAL DEPLOY: 2025
+STATUS: ✅ BERHASIL DI-DEPLOY DAN DAPAT DIAKSES
